@@ -3,6 +3,11 @@ import { Token } from '@uniswap/sdk-core';
 import {
   DAI_MAINNET,
   ITokenProvider,
+  STABLE_TA_KROMA,
+  STABLE_TB_KROMA,
+  TA_KROMA,
+  TB_KROMA,
+  USDC_KROMA,
   USDC_MAINNET,
   USDT_MAINNET,
   WBTC_MAINNET,
@@ -44,6 +49,14 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
     [ChainId.CELO_ALFAJORES]: [WRAPPED_NATIVE_CURRENCY[ChainId.CELO_ALFAJORES]],
     [ChainId.GNOSIS]: [WRAPPED_NATIVE_CURRENCY[ChainId.GNOSIS]],
     [ChainId.MOONBEAM]: [WRAPPED_NATIVE_CURRENCY[ChainId.MOONBEAM]],
+    [ChainId.KROMA]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.KROMA]!,
+      TA_KROMA,
+      TB_KROMA,
+      STABLE_TA_KROMA,
+      STABLE_TB_KROMA,
+      USDC_KROMA,
+    ],
   };
 };
 

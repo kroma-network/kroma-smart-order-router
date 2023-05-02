@@ -16,6 +16,7 @@ export enum ChainId {
   CELO_ALFAJORES = 44787,
   GNOSIS = 100,
   MOONBEAM = 1284,
+  KROMA = 2357,
 }
 
 // WIP: Gnosis, Moonbeam
@@ -33,6 +34,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.GÖRLI,
   ChainId.CELO_ALFAJORES,
   ChainId.CELO,
+  ChainId.KROMA,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -63,6 +65,7 @@ export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
   ChainId.ARBITRUM_RINKEBY,
   ChainId.POLYGON,
   ChainId.POLYGON_MUMBAI,
+  ChainId.KROMA,
 ];
 
 export const ID_TO_CHAIN_ID = (id: number): ChainId => {
@@ -97,6 +100,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GNOSIS;
     case 1284:
       return ChainId.MOONBEAM;
+    case 2357:
+      return ChainId.KROMA;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -118,6 +123,7 @@ export enum ChainName {
   CELO_ALFAJORES = 'celo-alfajores',
   GNOSIS = 'gnosis-mainnet',
   MOONBEAM = 'moonbeam-mainnet',
+  KROMA = 'sepolia-kroma',
 }
 
 export enum NativeCurrencyName {
@@ -127,6 +133,7 @@ export enum NativeCurrencyName {
   CELO = 'CELO',
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
+  KROMA = 'ETH',
 }
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.MAINNET]: [
@@ -201,6 +208,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.CELO_ALFAJORES]: NativeCurrencyName.CELO,
   [ChainId.GNOSIS]: NativeCurrencyName.GNOSIS,
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
+  [ChainId.KROMA]: NativeCurrencyName.KROMA,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -235,6 +243,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GNOSIS;
     case 1284:
       return ChainName.MOONBEAM;
+    case 2357:
+      return ChainName.KROMA;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -272,6 +282,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_CELO!;
     case ChainId.CELO_ALFAJORES:
       return process.env.JSON_RPC_PROVIDER_CELO_ALFAJORES!;
+    case ChainId.KROMA:
+      return process.env.JSON_RPC_PROVIDER_KROMA!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -384,6 +396,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WGLMR',
     'Wrapped GLMR'
+  ),
+  [ChainId.KROMA]: new Token(
+    ChainId.KROMA,
+    '0x4200000000000000000000000000000000000001',
+    18,
+    'ETH',
+    'Kroma Wrapped ETH'
   ),
 };
 

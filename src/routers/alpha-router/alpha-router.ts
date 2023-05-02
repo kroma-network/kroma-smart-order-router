@@ -551,7 +551,9 @@ export class AlphaRouter
           chainId,
           new URISubgraphProvider(
             chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v2/${chainName}.json`,
+            chainId === ChainId.KROMA
+              ? 'https://kroma-network.github.io/kroma-hub-web/pools.json'
+              : `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v2/${chainName}.json`,
             undefined,
             0
           ),
@@ -569,7 +571,9 @@ export class AlphaRouter
           chainId,
           new URISubgraphProvider(
             chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
+            chainId === ChainId.KROMA
+              ? 'https://kroma-network.github.io/kroma-hub-web/pools.json'
+              : `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
             undefined,
             0
           ),
