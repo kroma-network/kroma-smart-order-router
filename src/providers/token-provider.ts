@@ -605,6 +605,47 @@ export const WBTC_MOONBEAM = new Token(
   'Wrapped BTC bridged using Multichain'
 );
 
+export const TA_KROMA = new Token(
+  ChainId.KROMA,
+  '0x2104E3BD1cC8551EeC0c7ad10dE13da29136B19C',
+  18,
+  'TA',
+  'Token A'
+);
+
+export const TB_KROMA = new Token(
+  ChainId.KROMA,
+  '0x57B5284BA55A1170b4D3e5C0d4fA22baC893B291',
+  18,
+  'TB',
+  'Token B'
+);
+
+export const STABLE_TA_KROMA = new Token(
+  ChainId.KROMA,
+  '0x247A1a3C859699010E9914eF6E41942E1C561A0d',
+  6,
+  'STA',
+  'Stable Token A'
+);
+
+export const STABLE_TB_KROMA = new Token(
+  ChainId.KROMA,
+  '0xEB4494349B7CF61a4d27A536bb63B2c78d8802a0',
+  6,
+  'STB',
+  'Stable Token B'
+);
+
+export const USDC_KROMA = new Token(
+  ChainId.KROMA,
+  //  '0x57f367db18ceb357a4edc465946fb29836087bcd',
+  '0x9A274CD0229dA2d3E4bA1071F1b1b2ab4d144DdB',
+  6,
+  'USDC',
+  'USD//C'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -805,6 +846,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_MOONBEAM;
     case ChainId.BSC:
       return USDC_BSC;
+    case ChainId.KROMA:
+      return USDC_KROMA;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

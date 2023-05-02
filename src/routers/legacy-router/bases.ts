@@ -7,14 +7,18 @@ import {
   DAI_BSC,
   DAI_MAINNET,
   ITokenProvider,
+  STABLE_TA_KROMA,
+  STABLE_TB_KROMA,
+  TA_KROMA,
+  TB_KROMA,
   USDC_BSC,
+  USDC_KROMA,
   USDC_MAINNET,
   USDT_BSC,
   USDT_MAINNET,
   WBTC_MAINNET,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
-
 } from '../../providers/token-provider';
 import { ChainId, WRAPPED_NATIVE_CURRENCY } from '../../util/chains';
 
@@ -64,6 +68,14 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
       USDC_BSC,
       USDT_BSC,
       BTC_BSC,
+    ],
+    [ChainId.KROMA]: [
+      WRAPPED_NATIVE_CURRENCY[ChainId.KROMA]!,
+      TA_KROMA,
+      TB_KROMA,
+      STABLE_TA_KROMA,
+      STABLE_TB_KROMA,
+      USDC_KROMA,
     ],
   };
 };

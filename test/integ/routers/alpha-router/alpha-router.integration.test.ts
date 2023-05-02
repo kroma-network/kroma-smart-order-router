@@ -46,6 +46,7 @@ import {
   UNI_MAINNET,
   USDC_BSC,
   USDC_ETHEREUM_GNOSIS,
+  USDC_KROMA,
   USDC_MAINNET,
   USDC_ON,
   USDT_BSC,
@@ -2535,6 +2536,7 @@ describe('quote for other networks', () => {
     [ChainId.GNOSIS]: WBTC_GNOSIS,
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDC_BSC,
+    [ChainId.KROMA]: USDC_KROMA,
   };
   const TEST_ERC20_2: { [chainId in ChainId]: Token } = {
     [ChainId.MAINNET]: DAI_ON(1),
@@ -2555,6 +2557,7 @@ describe('quote for other networks', () => {
     [ChainId.GNOSIS]: USDC_ETHEREUM_GNOSIS,
     [ChainId.MOONBEAM]: WBTC_MOONBEAM,
     [ChainId.BSC]: USDT_BSC,
+    [ChainId.KROMA]: USDC_KROMA,
   };
 
   // TODO: Find valid pools/tokens on optimistic kovan and polygon mumbai. We skip those tests for now.
