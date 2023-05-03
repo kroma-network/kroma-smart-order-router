@@ -1,13 +1,13 @@
 {
-  "name": "kroma-smart-order-router",
-  "version": "3.11.2",
-  "description": "Uniswap Smart Order Router",
+  "name": "kroma-uniswap-smart-order-router",
+  "version": "0.0.1",
+  "description": "Uniswap Smart Order Router For Kroma",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/smart-order-router.git"
+    "url": "https://github.com/kroma-network/kroma-uniswap-smart-order-router"
   },
   "license": "GPL",
   "keywords": [],
